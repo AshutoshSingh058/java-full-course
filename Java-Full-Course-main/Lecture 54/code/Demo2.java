@@ -46,24 +46,24 @@ public class Demo2 {
 }
 
 class SeatBooking {
-    //String seat = new String("EMPTY");
-    // AtomicReference<String> seat = new AtomicReference<>("EMPTY");
+    String seat = new String("EMPTY");
+    AtomicReference<String> seat = new AtomicReference<>("EMPTY");
 
-    // boolean bookSeat(String name) {
-    //     String currentValue = seat.get();
+    boolean bookSeat(String name) {
+        String currentValue = seat.get();
 
-    //     if(currentValue.equals("EMPTY") == false) {
-    //         return false;
-    //     }
+        if(currentValue.equals("EMPTY") == false) {
+            return false;
+        }
 
-    //     return seat.compareAndSet("EMPTY", name);
-
-    // }
-    AtomicReference<String> seat = new AtomicReference("EMPTY");
-
-    boolean bookSeat(String name){
         return seat.compareAndSet("EMPTY", name);
+
     }
+    // AtomicReference<String> seat = new AtomicReference("EMPTY");
+
+    // boolean bookSeat(String name){
+    //     return seat.compareAndSet("EMPTY", name);
+    // }
 }
 
 // Compare and Set operation
