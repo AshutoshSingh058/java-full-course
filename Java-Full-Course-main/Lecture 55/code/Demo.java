@@ -78,36 +78,25 @@ public class Demo {
 }
 
 class LikeCounter {
-
-    //AtomicReference<Integer> totalCount = new AtomicReference<>(0);
-
+    // AtomicReference<Integer> totalCount = new AtomicReference<>(0);
     AtomicInteger totalCount = new AtomicInteger(0);
 
     public void like() {
-
         totalCount.incrementAndGet();
+        // Integer currentCount, finalCount;
 
-        // Integer currentCount;
-        // Integer finalCount;
-
-        // while(true) {
-
-        //     // 1. We will capture the latest value of totalCount;
+        // while(true){
         //     currentCount = totalCount.get();
 
-        //     // 2. Increment like counter by 1
         //     finalCount = currentCount + 1;
 
-        //     //3. Check again, if the count is still what i saw.
-        //     if(totalCount.compareAndSet(currentCount, finalCount)) {
+        //     if(totalCount.compareAndSet(currentCount, finalCount)){
+        //         System.out.println("Updated, "+ finalCount);
         //         return;
         //     }
-
-        //     //4. If a thread reaches here, someone else must have updated ther counter value;
-        //     // Re-try
-        //     System.out.println("Conflict detected. Re-trying...");
+        //     System.out.println("Conflict , retry...");
         // }
-    } 
+    }
 
     public int getTotalLikes() {
         return totalCount.get();
